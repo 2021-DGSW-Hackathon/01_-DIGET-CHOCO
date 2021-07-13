@@ -23,7 +23,7 @@ export class HotpalceRepository extends Repository<Hotplace> {
     return this.createQueryBuilder('hotplace')
       .leftJoinAndSelect('hotplace.comment', 'comment')
       .leftJoinAndSelect('hotplace.user', 'user')
-      .where('idx = :idx', { idx })
+      .where('hotplace.idx = :idx', { idx })
       .getOne();
   }
 

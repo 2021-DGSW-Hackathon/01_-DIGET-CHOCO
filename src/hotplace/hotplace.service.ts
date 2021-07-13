@@ -30,6 +30,15 @@ export class HotplaceService {
     return hotplace;
   }
 
+  async getHotplaceByIdxPlus(idx: number) {
+
+    const hotplace = await this.getHotplaceByIdx(idx);
+
+    delete hotplace.user;
+
+    return hotplace;
+  }
+
   async getAllHotplace(option?: 'star' | 'comment') {
 
     const hotplaces: any = await this.hotpalceRepository.getAllHotplace()

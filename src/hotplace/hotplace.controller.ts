@@ -25,6 +25,7 @@ export class HotplaceController {
     return new BaseResponse(201, '추가 완료');
   }
 
+
   @Get('all')
   async getAllHotplace(
     @Query('option') option?: 'star' | 'comment',
@@ -51,6 +52,16 @@ export class HotplaceController {
     const searchHotplace = await this.hotplaceService.getSearch(keyword);
 
     return new BaseResponse(200, '검색 성공', searchHotplace);
+  }
+
+  @Get('/:idx')
+  async getDetail(
+    @Param('idx') idx: number,
+  ) {
+
+    const hotplace = await this.hotplaceService.getHotplaceByIdxPlus(idx);
+
+    return new BaseResponse(200, '상세 조회 성공', hotplace);
   }
 
   @Put('/:idx')

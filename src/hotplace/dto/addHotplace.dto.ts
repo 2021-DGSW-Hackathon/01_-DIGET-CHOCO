@@ -8,6 +8,14 @@ export default class AddHotplaceDto {
 
   @IsString()
   @IsNotEmpty()
+  discript: string;
+
+  @IsString()
+  @IsNotEmpty()
+  phone: string;
+
+  @IsString()
+  @IsNotEmpty()
   xPosition: string;
 
   @IsString()

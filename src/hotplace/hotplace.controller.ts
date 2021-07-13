@@ -2,6 +2,7 @@ import { Body, Controller, Post, UseGuards } from '@nestjs/common';
 import { Token } from 'src/libs/decorators/token.decorator';
 import AuthGaurd from 'src/middlewares/auth.middleware';
 import User from 'src/models/User';
+import BaseResponse from 'src/response/base.response';
 import AddHotplaceDto from './dto/addHotplace.dto';
 import { HotplaceService } from './hotplace.service';
 
@@ -19,6 +20,8 @@ export class HotplaceController {
     @Body() addHotplaceDto: AddHotplaceDto
   ) {
 
-    const a = await this.hotplaceService.addHotplace(addHotplaceDto);
+    await this.hotplaceService.addHotplace(user, addHotplaceDto);
+
+    return new BaseResponse(201, '추가 완료');
   }
 }

@@ -9,7 +9,7 @@ import {
   UnauthorizedException
 } from "@nestjs/common";
 import { JWT } from "src/config/dotenv";
-import jwt from 'jsonwebtoken';
+import * as jwt from 'jsonwebtoken';
 import { UserService } from "src/user/user.service";
 
 @Injectable()
@@ -36,8 +36,7 @@ export default class AuthGaurd implements CanActivate {
     }
 
     const verifyToken: any = await this.verify(token);
-
-    const user = await this.userService.findUserById(verifyToken.userIdx);
+    const user = await this.userService.findUserById(verifyToken);
 
     request.user = user;
 

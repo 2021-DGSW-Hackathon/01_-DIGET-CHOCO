@@ -1,4 +1,4 @@
-import { Body, Controller, Param, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Param, Post, UseGuards } from '@nestjs/common';
 import { Token } from 'src/libs/decorators/token.decorator';
 import { CommentService } from './comment.service';
 import User from '../models/User';
@@ -24,5 +24,17 @@ export class CommentController {
     await this.commentService.addComment(idx, user, addCommentDto);
 
     return new BaseResponse(200, '추가 완료');
+  }
+
+  @Delete('/:idx')
+  @UseGuards(AuthGaurd)
+  async deleteComment(
+    @Param('idx') idx: number,
+    @Token() user: User,
+  ) {
+
+    await this.commentService.deleteComment(idx, user);
+
+    return new BaseResponse(200, '삭제 완료');
   }
 }

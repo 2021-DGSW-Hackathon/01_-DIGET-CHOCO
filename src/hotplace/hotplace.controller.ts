@@ -1,4 +1,4 @@
-import { Body, Controller, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query, UseGuards } from '@nestjs/common';
 import { Token } from 'src/libs/decorators/token.decorator';
 import AuthGaurd from 'src/middlewares/auth.middleware';
 import User from 'src/models/User';
@@ -23,5 +23,23 @@ export class HotplaceController {
     await this.hotplaceService.addHotplace(user, addHotplaceDto);
 
     return new BaseResponse(201, '추가 완료');
+  }
+
+  @Get('all')
+  async getAllHotplace(
+    @Query('option') option: 'star' | 'comment' = 'star',
+  ) {
+
+    const getAllHotplace = await this.hotplaceService.getAllHotplace(option);
+
+    return new BaseResponse(200, `${option}별조회 완료`, getAllHotplace);
+  }
+
+  @Get('five')
+  async getFiveHotplace() {
+
+    const getFiveHotplace = await this.hotplaceService.getFiveHotplace();
+
+    return new BaseResponse(200, `다섯개만 조회 완료`, getFiveHotplace);
   }
 }

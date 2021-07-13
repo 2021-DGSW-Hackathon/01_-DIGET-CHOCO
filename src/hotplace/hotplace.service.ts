@@ -40,7 +40,15 @@ export class HotplaceService {
       cnt += i.star;
     }
 
-    hotplace.star = cnt;
+    const star = cnt / hotplace.comment.length;
+
+    if (star === null) {
+
+      hotplace.star = 0;
+    } else {
+
+      hotplace.star = star;
+    }
     delete hotplace.user;
 
     return hotplace;
@@ -96,7 +104,15 @@ export class HotplaceService {
         cnt += j.star;
       }
 
-      hotplaces[key].star = (cnt / value.comment.length);
+      const star = cnt / value.comment.length;
+
+      if (star === null) {
+
+        hotplaces[key].star = 0;
+      } else {
+
+        hotplaces[key].star = star;
+      }
     }
 
     hotplaces.sort((a, b) => b.star - a.star);
@@ -116,7 +132,15 @@ export class HotplaceService {
         cnt += j.star;
       }
 
-      hotplaces[key].star = (cnt / value.comment.length);
+      const star = cnt / value.comment.length;
+
+      if (star === null) {
+
+        hotplaces[key].star = 0;
+      } else {
+
+        hotplaces[key].star = star;
+      }
     }
 
     hotplaces.sort((a, b) => b.star - a.star);

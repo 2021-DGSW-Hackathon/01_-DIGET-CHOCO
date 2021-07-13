@@ -58,7 +58,15 @@ export class HotplaceService {
         cnt += j.star;
       }
 
-      hotplaces[key].star = (cnt / value.comment.length);
+      const star = cnt / value.comment.length;
+
+      if (star === null) {
+
+        hotplaces[key].star = 0;
+      } else {
+
+        hotplaces[key].star = star;
+      }
     }
 
     if (option === 'comment') {

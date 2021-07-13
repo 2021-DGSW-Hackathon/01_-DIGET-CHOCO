@@ -16,7 +16,7 @@ export default class Comment {
   @Column({
     nullable: true,
   })
-  comment: string;
+  comment?: string;
 
   @Column({
     type: 'tinyint',

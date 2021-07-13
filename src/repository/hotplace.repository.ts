@@ -6,7 +6,8 @@ export class HotpalceRepository extends Repository<Hotplace> {
 
   getAllHotplace() {
     return this.createQueryBuilder('hotplace')
-      .leftJoinAndSelect('hotpalce.comment', 'comment')
-      .getMany()
+      .leftJoinAndSelect('hotplace.comment', 'comment')
+      .orderBy('hotplace.createdAt', 'DESC')
+      .getMany();
   }
 }

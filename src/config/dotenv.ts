@@ -29,6 +29,7 @@ export const JWT = {
 export const ENDPOINT = {
   DAUTH: getValue('DAUTH_ENDPOINT'),
   OPENAPI: getValue('OPENAPI_ENDPOINT'),
+  SERVER: getValue('SERVER_ENDPOINT'),
 };
 
 export const CLIENT = {

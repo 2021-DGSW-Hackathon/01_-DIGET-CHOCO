@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, OneToMany, CreateDateColumn } from "typeorm";
 import Comment from "./Comment";
 import User from "./User";
 
@@ -28,10 +28,20 @@ export default class Hotplace {
   phone: string;
 
   @Column({
+    nullable: true,
+  })
+  image: string;
+
+  @Column({
     type: 'tinyint',
     default: false,
   })
   anonymous: boolean;
+
+  @CreateDateColumn({
+    name: 'created_at',
+  })
+  createdAt: Date;
 
   @JoinColumn({ name: 'user_id' })
   @ManyToOne(type => User, {

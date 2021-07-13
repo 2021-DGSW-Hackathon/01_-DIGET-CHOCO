@@ -14,6 +14,9 @@ export default class AddHotplaceDto {
   @IsNotEmpty()
   phone: string;
 
+  @IsOptional()
+  image: string;
+
   @IsString()
   @IsNotEmpty()
   xPosition: string;
@@ -22,7 +25,6 @@ export default class AddHotplaceDto {
   @IsNotEmpty()
   yPosition: string;
 
-  @IsBoolean()
   @IsOptional()
   anonymous?: boolean;
 }

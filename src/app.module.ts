@@ -6,6 +6,7 @@ import { ormConfig } from './config/ormConfig';
 import { UserModule } from './user/user.module';
 import { TokenModule } from './token/token.module';
 import { HotplaceModule } from './hotplace/hotplace.module';
+import { UploadModule } from './upload/upload.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { HotplaceModule } from './hotplace/hotplace.module';
     UserModule,
     TokenModule,
     HotplaceModule,
+    UploadModule,
   ],
   controllers: [AppController],
   providers: [AppService],

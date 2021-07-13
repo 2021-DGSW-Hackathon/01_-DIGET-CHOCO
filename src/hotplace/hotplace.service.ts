@@ -18,11 +18,11 @@ export class HotplaceService {
     await this.hotpalceRepository.save($hotpalce);
   }
 
-  async getAllHotplace(option: 'star' | 'comment') {
+  async getAllHotplace(option?: 'star' | 'comment') {
 
     const hotplaces: any = await this.hotpalceRepository.getAllHotplace()
 
-    for (const [key, value] of hotplaces) {
+    for (const [key, value] of hotplaces.entries()) {
       let cnt = 0;
 
       for (const j of value.comment) {
@@ -39,7 +39,12 @@ export class HotplaceService {
       return hotplaces;
     }
 
-    hotplaces.sort((a, b) => b.star - a.star);
+    if (option === 'star') {
+
+      hotplaces.sort((a, b) => b.star - a.star);
+      return hotplaces;
+    }
+
     return hotplaces;
   }
 
@@ -47,7 +52,7 @@ export class HotplaceService {
 
     const hotplaces: any = await this.hotpalceRepository.getAllHotplace()
 
-    for (const [key, value] of hotplaces) {
+    for (const [key, value] of hotplaces.entries()) {
       let cnt = 0;
 
       for (const j of value.comment) {
@@ -59,7 +64,6 @@ export class HotplaceService {
     }
 
     hotplaces.sort((a, b) => b.star - a.star);
-
 
     return hotplaces.splice(0, 4);
   }

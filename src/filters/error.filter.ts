@@ -19,7 +19,7 @@ export class ErrorFilter<T> implements ExceptionFilter {
       Logger.error(exception);
       res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
         status: HttpStatus.INTERNAL_SERVER_ERROR,
-        message: 'Dauth서버 오류'
+        message: '서버 오류'
       });
     }
   }

@@ -68,7 +68,7 @@ export class HotplaceService {
 
       const star = cnt / value.comment.length;
 
-      if (star === null) {
+      if (isNaN(star)) {
 
         hotplaces[key].star = 0;
       } else {

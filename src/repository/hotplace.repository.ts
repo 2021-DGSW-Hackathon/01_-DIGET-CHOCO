@@ -16,6 +16,8 @@ export class HotpalceRepository extends Repository<Hotplace> {
   getSearchHotplace(keyword: string) {
     return this.createQueryBuilder('hotplace')
       .leftJoinAndSelect('hotplace.comment', 'comment')
+      .leftJoinAndSelect('hotplace.user', 'user')
+      .leftJoinAndSelect('comment.user', 'user1')
       .where('hotplace.name like :keyword', { keyword: `%${keyword}%` })
       .orderBy('hotplace.createdAt', 'DESC')
       .getMany();

@@ -1,0 +1,41 @@
+version: "3.7"
+
+services: 
+  server:
+    env_file:
+      - .env
+    depends_on: 
+      - mysql
+    ports: 
+      - "8888:${PORT}"
+    build: .
+    environment:
+      PORT: ${PORT}
+
+      DATABASE_HOST: mysql
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_DATABASE_NAME: ${DATABASE_DATABASE_NAME}
+
+      JWT_SECRET: ${JWT_SECRET}
+      
+      DODAM_API_KEYDAUTH_ENDPOINT: ${DODAM_API_KEYDAUTH_ENDPOINT}
+      OPENAPI_ENDPOINT: ${OPENAPI_ENDPOINT}
+      SERVER_ENDPOINT: ${SERVER_ENDPOINT}
+      
+      CLINET_ID: ${CLINET_ID}
+      CLIENT_SECRET: ${CLIENT_SECRET}
+
+  mysql:
+    image: mysql:5.7
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    env_file: 
+      - mysql.env
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DATABASE_PASSWORD}
+      - MYSQL_DATABASE=ask
+      - MYSQL_PASSWORD=${DATABASE_PASSWORD}
+      - MYSQL_USER=${DATABASE_USER}

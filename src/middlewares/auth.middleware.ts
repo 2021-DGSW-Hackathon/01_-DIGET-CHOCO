@@ -35,9 +35,9 @@ export default class AuthGaurd implements CanActivate {
       throw new BadRequestException('잘못된 토큰입니다');
     }
 
-    const verifyToken = await this.verify(token);
+    const verifyToken: any = await this.verify(token);
 
-    const user = await this.userRepository.findUserByIdx(verifyToken.userId);
+    const user = await this.userRepository.findUserByIdx(verifyToken.userIdx);
 
     request.user = user;
 
@@ -48,7 +48,7 @@ export default class AuthGaurd implements CanActivate {
 
     try {
 
-      return jwt.verify(token);
+      return jwt.verify(token, JWT.SECRET);
     } catch (err) {
 
       switch (err.message) {

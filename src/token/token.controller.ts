@@ -1,5 +1,5 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
-import GetTokenDto from './dto/getTokenDto';
+import { Body, Controller, Get, Post, Query } from '@nestjs/common';
+import BaseResponse from 'src/response/base.response';
 import { TokenService } from './token.service';
 
 @Controller('token')
@@ -9,11 +9,13 @@ export class TokenController {
     private readonly tokenService: TokenService,
   ) { }
 
-  @Get('dauth')
+  @Get()
   async getToken(
-    @Body() getTokenDto: GetTokenDto,
+    @Query('code') code: string
   ) {
 
-    const token = this.tokenService.getToken(getTokenDto.code);
+    const tokenInfo = await this.tokenService.getToken(code);
+
+    return new BaseResponse(200, '조회 성공', tokenInfo);
   }
 }

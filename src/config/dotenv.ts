@@ -33,6 +33,6 @@ export const ENDPOINT = {
 };
 
 export const CLIENT = {
-  ID: getValue('CLINET_ID'),
+  ID: getValue('CLIENT_ID'),
   SECRET: getValue('CLIENT_SECRET'),
 }

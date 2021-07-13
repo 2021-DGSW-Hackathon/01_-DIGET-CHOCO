@@ -9,14 +9,14 @@ import {
   UnauthorizedException
 } from "@nestjs/common";
 import { JWT } from "src/config/dotenv";
-import { UserRepository } from "src/repository/user.repository";
 import jwt from 'jsonwebtoken';
+import { UserService } from "src/user/user.service";
 
 @Injectable()
 export default class AuthGaurd implements CanActivate {
 
   constructor(
-    private readonly userRepository: UserRepository,
+    private readonly userService: UserService,
   ) { }
 
   public async canActivate(context: ExecutionContext): Promise<boolean> {
@@ -37,7 +37,7 @@ export default class AuthGaurd implements CanActivate {
 
     const verifyToken: any = await this.verify(token);
 
-    const user = await this.userRepository.findUserByIdx(verifyToken.userIdx);
+    const user = await this.userService.findUserById(verifyToken.userIdx);
 
     request.user = user;
 

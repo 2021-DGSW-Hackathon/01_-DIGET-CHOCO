@@ -12,7 +12,17 @@ export default class Hotplace {
   name: string;
 
   @Column()
-  address: string;
+  discript: string;
+
+  @Column({
+    name: 'x_position'
+  })
+  xPosition: string;
+
+  @Column({
+    name: 'y_position'
+  })
+  yPosition: string;
 
   @Column()
   phone: string;

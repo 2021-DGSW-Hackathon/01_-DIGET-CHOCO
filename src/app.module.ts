@@ -5,12 +5,14 @@ import { AppService } from './app.service';
 import { ormConfig } from './config/ormConfig';
 import { UserModule } from './user/user.module';
 import { TokenModule } from './token/token.module';
+import { HotplaceModule } from './hotplace/hotplace.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(ormConfig),
     UserModule,
     TokenModule,
+    HotplaceModule,
   ],
   controllers: [AppController],
   providers: [AppService],

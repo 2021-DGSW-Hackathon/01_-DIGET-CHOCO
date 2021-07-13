@@ -43,6 +43,16 @@ export class HotplaceController {
     return new BaseResponse(200, `다섯개만 조회 완료`, getFiveHotplace);
   }
 
+  @Get('search')
+  async getSearchHotplace(
+    @Query('keyword') keyword: string,
+  ) {
+
+    const searchHotplace = await this.hotplaceService.getSearch(keyword);
+
+    return new BaseResponse(200, '검색 성공', searchHotplace);
+  }
+
   @Put('/:idx')
   @UseGuards(AuthGaurd)
   async putHotplace(

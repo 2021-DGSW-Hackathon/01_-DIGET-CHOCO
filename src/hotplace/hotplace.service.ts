@@ -80,6 +80,26 @@ export class HotplaceService {
     return hotplaces.splice(0, 4);
   }
 
+  async getSearch(keyword: string) {
+
+    const hotplaces: any = await this.hotpalceRepository.getSearchHotplace(keyword);
+
+    for (const [key, value] of hotplaces.entries()) {
+      let cnt = 0;
+
+      for (const j of value.comment) {
+
+        cnt += j.star;
+      }
+
+      hotplaces[key].star = (cnt / value.comment.length);
+    }
+
+    hotplaces.sort((a, b) => b.star - a.star);
+
+    return hotplaces;
+  }
+
   async modiftHotplace(idx: number, user: User, addHotplaceDto: AddHotplaceDto) {
 
     const hotplace = await this.getHotplaceByIdx(idx);

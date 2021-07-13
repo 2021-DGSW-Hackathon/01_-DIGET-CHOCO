@@ -9,11 +9,11 @@ export class TokenController {
     private readonly tokenService: TokenService,
   ) { }
 
-  @Get('')
+  @Get('dauth')
   async getToken(
     @Body() getTokenDto: GetTokenDto,
   ) {
 
-    const token = this.tokenService.getToken(getTokenDto.code)
+    const token = this.tokenService.getToken(getTokenDto.code);
   }
 }

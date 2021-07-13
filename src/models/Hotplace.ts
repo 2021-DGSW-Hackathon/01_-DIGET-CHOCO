@@ -14,6 +14,9 @@ export default class Hotplace {
   @Column()
   address: string;
 
+  @Column()
+  phone: string;
+
   @Column({
     type: 'tinyint',
     default: false,

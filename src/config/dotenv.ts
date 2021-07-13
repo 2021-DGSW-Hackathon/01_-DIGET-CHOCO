@@ -22,6 +22,10 @@ export const DATABASE = {
   DATABASENAME: getValue('DATABASE_DATABASE_NAME'),
 };
 
+export const JWT = {
+  SECRET: getValue('JWT_SECRET'),
+};
+
 export const ENDPOINT = {
   DAUTH: getValue('DAUTH_ENDPOINT'),
   TOKEN: getValue('TOKEN_ENDPOINT'),

@@ -7,6 +7,7 @@ import { UserModule } from './user/user.module';
 import { TokenModule } from './token/token.module';
 import { HotplaceModule } from './hotplace/hotplace.module';
 import { UploadModule } from './upload/upload.module';
+import { CommentModule } from './comment/comment.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { UploadModule } from './upload/upload.module';
     TokenModule,
     HotplaceModule,
     UploadModule,
+    CommentModule,
   ],
   controllers: [AppController],
   providers: [AppService],

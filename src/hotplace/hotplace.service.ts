@@ -32,8 +32,15 @@ export class HotplaceService {
 
   async getHotplaceByIdxPlus(idx: number) {
 
-    const hotplace = await this.getHotplaceByIdx(idx);
+    const hotplace: any = await this.getHotplaceByIdx(idx);
 
+    let cnt = 0;
+    for (const i of hotplace.comment) {
+
+      cnt += i.star;
+    }
+
+    hotplace.star = cnt;
     delete hotplace.user;
 
     return hotplace;

@@ -4,6 +4,7 @@ import { CommentService } from './comment.service';
 import User from '../models/User';
 import AddCommentDto from './dto/addComment.dto';
 import BaseResponse from 'src/response/base.response';
+import AuthGaurd from 'src/middlewares/auth.middleware';
 
 @Controller('comment')
 export class CommentController {
@@ -13,7 +14,7 @@ export class CommentController {
   ) { }
 
   @Post('/:idx')
-  @UseGuards()
+  @UseGuards(AuthGaurd)
   async addComment(
     @Param('idx') idx: number,
     @Token() user: User,

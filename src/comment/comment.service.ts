@@ -17,7 +17,9 @@ export class CommentService {
     const hotplace = await this.hotplaceService.getHotplaceByIdx(idx);
 
     const $comment = this.commentRepository.create(addCommentDto);
+    $comment.hotplace = hotplace;
     $comment.user = user;
+    console.log($comment)
     await this.commentRepository.save($comment);
   }
 }

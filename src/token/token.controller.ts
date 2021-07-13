@@ -1,4 +1,5 @@
-import { Controller } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
+import GetTokenDto from './dto/getTokenDto';
 import { TokenService } from './token.service';
 
 @Controller('token')
@@ -8,5 +9,11 @@ export class TokenController {
     private readonly tokenService: TokenService,
   ) { }
 
+  @Get('')
+  async getToken(
+    @Body() getTokenDto: GetTokenDto,
+  ) {
 
+    const token = this.tokenService.getToken(getTokenDto.code)
+  }
 }

@@ -1,4 +1,5 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import Hotplace from "./hotplace";
 
 @Entity('user')
 export default class User {
@@ -33,7 +34,12 @@ export default class User {
   createdAt: Date;
 
   @UpdateDateColumn({
-    name: 'updated_at'
+    name: 'updated_at',
+    nullable: true,
   })
   updatedAt: Date;
+
+  @OneToMany(type => Hotplace, hotplace => hotplace.user)
+  hotplace!: Hotplace[];
+
 }

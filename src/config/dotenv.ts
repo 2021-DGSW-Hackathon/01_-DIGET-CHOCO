@@ -23,5 +23,11 @@ export const DATABASE = {
 };
 
 export const ENDPOINT = {
+  DAUTH: getValue('DAUTH_ENDPOINT'),
   TOKEN: getValue('TOKEN_ENDPOINT'),
 };
+
+export const CLIENT = {
+  ID: getValue('CLINET_ID'),
+  SECRET: getValue('CLINET_SECREt'),
+}

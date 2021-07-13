@@ -29,5 +29,5 @@ export const ENDPOINT = {
 
 export const CLIENT = {
   ID: getValue('CLINET_ID'),
-  SECRET: getValue('CLINET_SECREt'),
+  SECRET: getValue('CLIENT_SECRET'),
 }

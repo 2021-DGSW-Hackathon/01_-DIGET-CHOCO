@@ -1,4 +1,5 @@
 import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import Comment from "./Comment";
 import Hotplace from "./hotplace";
 
 @Entity('user')
@@ -42,4 +43,6 @@ export default class User {
   @OneToMany(type => Hotplace, hotplace => hotplace.user)
   hotplace!: Hotplace[];
 
+  @OneToMany(type => Comment, comment => comment.user)
+  comment!: Comment[];
 }

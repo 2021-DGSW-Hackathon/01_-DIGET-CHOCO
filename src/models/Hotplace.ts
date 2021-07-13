@@ -1,4 +1,5 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import Comment from "./Comment";
 import User from "./User";
 
 @Entity('hotplace')
@@ -25,4 +26,8 @@ export default class Hotplace {
     onUpdate: 'CASCADE',
   })
   user!: User | null;
+
+  @OneToMany(type => Comment, comment => comment.hotplace)
+  comment: Comment[];
+
 }

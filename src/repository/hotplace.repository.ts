@@ -22,8 +22,8 @@ export class HotpalceRepository extends Repository<Hotplace> {
   getHotplaceByIdx(idx: number) {
     return this.createQueryBuilder('hotplace')
       .leftJoinAndSelect('hotplace.comment', 'comment')
-      .leftJoinAndSelect('hotplace.comment.user', 'comment.user')
       .leftJoinAndSelect('hotplace.user', 'user')
+      .leftJoinAndSelect('comment.user', 'comment.user')
       .where('hotplace.idx = :idx', { idx })
       .getOne();
   }

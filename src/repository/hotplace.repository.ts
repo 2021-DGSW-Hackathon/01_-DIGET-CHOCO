@@ -10,4 +10,12 @@ export class HotpalceRepository extends Repository<Hotplace> {
       .orderBy('hotplace.createdAt', 'DESC')
       .getMany();
   }
+
+  getHotplaceByIdx(idx: number) {
+    return this.createQueryBuilder('hotplace')
+      .leftJoinAndSelect('hotplace.comment', 'comment')
+      .leftJoinAndSelect('hotplace.user', 'user')
+      .where('idx = :idx', { idx })
+      .getOne();
+  }
 }

@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Put, Query, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query, UseGuards } from '@nestjs/common';
 import { Token } from 'src/libs/decorators/token.decorator';
 import AuthGaurd from 'src/middlewares/auth.middleware';
 import User from 'src/models/User';
@@ -51,5 +51,20 @@ export class HotplaceController {
     @Body() addHotplaceDto: AddHotplaceDto,
   ) {
 
+    await this.hotplaceService.modiftHotplace(idx, user, addHotplaceDto);
+
+    return new BaseResponse(200, `수정 완료`);
+  }
+
+  @Delete('/:idx')
+  @UseGuards(AuthGaurd)
+  async deleteHotplace(
+    @Param('idx') idx: number,
+    @Token() user: User,
+  ) {
+
+    await this.hotplaceService.deleteHotplace(idx, user);
+
+    return new BaseResponse(200, `수정 완료`);
   }
 }

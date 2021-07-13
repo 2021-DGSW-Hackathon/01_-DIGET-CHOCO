@@ -5,7 +5,6 @@ import { ENDPOINT, CLIENT } from "src/config/dotenv";
 export const getToken = async (code: string) => {
   try {
 
-    console.log(code);
 
     const { data } = await axios.post(`${ENDPOINT.DAUTH}/token`, {
       code,

@@ -18,11 +18,8 @@ export class TokenService {
       throw new BadRequestException('잘못된 code입니다');
     }
 
-    console.log(code);
-
     const datuhToken = await getToken(code);
     const dodamInfo = await getInfo(datuhToken.token);
-    console.log(dodamInfo);
 
     const user = await this.userRepository.save({
       userId: dodamInfo.uniqueId,

@@ -1,5 +1,5 @@
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import Hotplace from "./hotplace";
+import Hotplace from "./Hotplace";
 import User from "./User";
 
 @Entity('comment')

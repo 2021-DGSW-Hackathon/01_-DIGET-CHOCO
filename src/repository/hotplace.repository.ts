@@ -1,4 +1,4 @@
-import Hotplace from "src/models/hotplace";
+import Hotplace from "src/models/Hotplace";
 import { EntityRepository, Repository } from "typeorm";
 
 @EntityRepository(Hotplace)

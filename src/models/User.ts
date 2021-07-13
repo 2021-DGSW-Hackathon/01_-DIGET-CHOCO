@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryColumn, UpdateDateColumn } from "typeorm";
 import Comment from "./Comment";
-import Hotplace from "./hotplace";
+import Hotplace from "./Hotplace";
 
 @Entity('user')
 export default class User {

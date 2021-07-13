@@ -1,5 +1,5 @@
 import { ForbiddenException, GoneException, Injectable } from '@nestjs/common';
-import Hotplace from 'src/models/hotplace';
+import Hotplace from 'src/models/Hotplace';
 import User from 'src/models/User';
 import { HotpalceRepository } from 'src/repository/hotplace.repository';
 import AddHotplaceDto from './dto/addHotplace.dto';

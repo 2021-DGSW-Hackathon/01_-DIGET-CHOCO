@@ -1,5 +1,5 @@
 import Comment from "./Comment";
-import Hotplace from "./hotplace";
+import Hotplace from "./Hotplace";
 import User from "./User";
 
 export default [

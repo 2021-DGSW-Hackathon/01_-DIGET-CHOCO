@@ -65,6 +65,6 @@ export class HotplaceController {
 
     await this.hotplaceService.deleteHotplace(idx, user);
 
-    return new BaseResponse(200, `수정 완료`);
+    return new BaseResponse(200, `삭제 완료`);
   }
 }

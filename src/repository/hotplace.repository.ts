@@ -7,6 +7,8 @@ export class HotpalceRepository extends Repository<Hotplace> {
   getAllHotplace() {
     return this.createQueryBuilder('hotplace')
       .leftJoinAndSelect('hotplace.comment', 'comment')
+      .leftJoinAndSelect('hotplace.user', 'user')
+      .leftJoinAndSelect('comment.user', 'user1')
       .orderBy('hotplace.createdAt', 'DESC')
       .getMany();
   }
@@ -23,7 +25,7 @@ export class HotpalceRepository extends Repository<Hotplace> {
     return this.createQueryBuilder('hotplace')
       .leftJoinAndSelect('hotplace.comment', 'comment')
       .leftJoinAndSelect('hotplace.user', 'user')
-      .leftJoinAndSelect('comment.user', 'comment.user')
+      .leftJoinAndSelect('comment.user', 'user1')
       .where('hotplace.idx = :idx', { idx })
       .getOne();
   }

@@ -19,7 +19,6 @@ export class CommentService {
     const $comment = this.commentRepository.create(addCommentDto);
     $comment.hotplace = hotplace;
     $comment.user = user;
-    console.log($comment)
     await this.commentRepository.save($comment);
   }
 }

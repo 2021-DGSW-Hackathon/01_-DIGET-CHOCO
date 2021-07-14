@@ -35,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A643E6C1269B137C00DE4617 /* webViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = webViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A643E6C1269B137C00DE4617 /* 맛있소고.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "맛있소고.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A643E6C4269B137C00DE4617 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A643E6C6269B137C00DE4617 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A643E6C8269B137C00DE4617 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		A643E6C2269B137C00DE4617 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A643E6C1269B137C00DE4617 /* webViewTest.app */,
+				A643E6C1269B137C00DE4617 /* 맛있소고.app */,
 				A643E6D7269B137E00DE4617 /* webViewTestTests.xctest */,
 				A643E6E2269B137E00DE4617 /* webViewTestUITests.xctest */,
 			);
@@ -145,7 +145,7 @@
 			);
 			name = webViewTest;
 			productName = webViewTest;
-			productReference = A643E6C1269B137C00DE4617 /* webViewTest.app */;
+			productReference = A643E6C1269B137C00DE4617 /* 맛있소고.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A643E6D6269B137E00DE4617 /* webViewTestTests */ = {
@@ -437,13 +437,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G6V32GD5JP;
 				INFOPLIST_FILE = webViewTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = webViewTest.webViewTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.------.------";
+				PRODUCT_NAME = "맛있소고";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -455,13 +456,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G6V32GD5JP;
 				INFOPLIST_FILE = webViewTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = webViewTest.webViewTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.------.";
+				PRODUCT_NAME = "맛있소고";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

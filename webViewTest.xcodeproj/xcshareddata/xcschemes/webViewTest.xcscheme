@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A643E6C0269B137C00DE4617"
-               BuildableName = "webViewTest.app"
+               BuildableName = "&#x1106;&#x1161;&#x11ba;&#x110b;&#x1175;&#x11bb;&#x1109;&#x1169;&#x1100;&#x1169;.app"
                BlueprintName = "webViewTest"
                ReferencedContainer = "container:webViewTest.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A643E6C0269B137C00DE4617"
-            BuildableName = "webViewTest.app"
+            BuildableName = "&#x1106;&#x1161;&#x11ba;&#x110b;&#x1175;&#x11bb;&#x1109;&#x1169;&#x1100;&#x1169;.app"
             BlueprintName = "webViewTest"
             ReferencedContainer = "container:webViewTest.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A643E6C0269B137C00DE4617"
-            BuildableName = "webViewTest.app"
+            BuildableName = "&#x1106;&#x1161;&#x11ba;&#x110b;&#x1175;&#x11bb;&#x1109;&#x1169;&#x1100;&#x1169;.app"
             BlueprintName = "webViewTest"
             ReferencedContainer = "container:webViewTest.xcodeproj">
          </BuildableReference>
